@@ -1,18 +1,19 @@
 import React from 'react';
-import img from '../img/logo-with-shadow.png'
-
-
-export function Testimonio () {
+import '../stylessheets/Testimonio.css';
+import '../img/foto-uno.png'
+/*props nos sirven para crear componentes reutilizables*/ 
+export function Testimonio (props) {
+  
   return (
-    <div className='contendor-testimonio'>
+    <div className='contenedor-testimonio'>
       <img className='imagen-testimonio'
-      src={img}
+      src={`../img/foto${props.imagen}.png`}
       alt='Imagen de Emma'
       />
       <div className='contenedor-texto-testimonio'>
-        <p className='nombre-testionio'> Emma Bostian en Suecia</p>
-        <p className='cargo-testimonio'>Ingenieria de software en spotify</p>
-        <p className='texto-testimonio'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsa obcaecati dignissimos pariatur, aliquid ea, iure asperiores quidem sit voluptatibus ducimus atque accusamus a, eveniet iusto nesciunt? Reiciendis, beatae quis!
+        <p className='nombre-testimonio'><strong>{props.nombre}</strong> en {props.pais}</p>
+        <p className='cargo-testimonio'>{props.cargo} en <strong>{props.empresa}</strong></p>
+        <p className='texto-testimonio'>"{props.testimonio}"
         </p>
       </div>
     </div>  

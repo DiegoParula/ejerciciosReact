@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/*como se van a dibijar los bordes de los elementos*/
+
+}
+
+html, body{
+  background-color: #1b1b32;
+}
+
+
+
+.App{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  font-family: Lato, sans-serif;
+}
+
+.logo-contenedor{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.logo{
+  height: 100px;
+
+}
+
+.contenedor-contador{
+  height: 550px;
+  min-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}

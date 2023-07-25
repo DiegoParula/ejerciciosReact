@@ -2,7 +2,8 @@
 import './App.css'
 import {Testimonio} from './components/Testimonio.jsx'
 
-
+/*falta lograr agregar fotos diefentes para cada testimonio*/
+/*falta pasasr los testimonios como un arreglo de testimonios*/
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
         <Testimonio 
           nombre='Emma Bostian'
           pais='Suecia'
-          imagen='-uno'
+          imagen=''
           cargo='Ingeniero de software'
           empresa='Spotify'
           testimonio="Siempre he tenido problemas para aprender JavaScript. He tomado muchos curos pero este es el mejo de todos"

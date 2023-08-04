@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.lista-productos{
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+html, body{
+    font-size: 18px;
+    background-color: #f5f6f7;
+}
+
+.contenedor-producto{
+    width: 1170px;
+   
+}

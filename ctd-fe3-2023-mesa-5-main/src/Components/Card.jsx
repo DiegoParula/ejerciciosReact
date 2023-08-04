@@ -1,27 +1,21 @@
 import React from 'react'
+import '../Styles/Card.css'
 
-function Card() {
+function Card({pro}) {
   return (
-    <div>
-        <ul>
-        <li>
-          <h2>{productos[0].nombre}</h2>
-          <img src={productos[0].imagen} />
-          <h3>{productos[0].precio}</h3>
-        </li>
-
-        <li>
-          <h2>{productos[1].nombre}</h2>
-          <img src={productos[1].imagen} />
-          <h3>{productos[1].precio}</h3>
-        </li>
-
-        <li>
-          <h2>{productos[2].nombre}</h2>
-          <img src={productos[2].imagen} />
-          <h3>{productos[2].precio}</h3>
-        </li>
-      </ul>
+    <div className='contenedor-producto'>
+        
+        
+        <div className='contenedor-imagen'>
+        <img src={pro.imagen} />
+        </div>
+        <div className='descripcion'>
+          <h2>{pro.nombre}</h2>
+          <h3>{pro.precio}</h3>
+        </div>
+       
+        
+        
     </div>
   )
 }

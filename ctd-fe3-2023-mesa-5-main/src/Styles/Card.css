@@ -1,0 +1,34 @@
+
+.contenedor-producto{
+    width: 1170px;
+    height: 368px;
+    margin: 10px 10px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 3px 13px 1px rgb(0 0 0 / 9%);
+}
+
+
+
+.contenedor-imagen{
+    height: 100%;
+    width: 368px;
+    display:block;
+
+}
+
+.contenedor-imagen img{
+    height: 100%;
+    width: auto;
+    display:block;
+}
+
+.contenedor-imagen, .descripcion{
+    flex: 1;
+} 
+
+
+

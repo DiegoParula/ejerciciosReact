@@ -1,3 +1,8 @@
+import React from "react";
+import Card from "./Components/Card";
+import './Styles/App.css'
+
+
 const productos = [
   {
       "id": 0,
@@ -22,19 +27,27 @@ const productos = [
       "nombre": "CERRADURA DIGITAL INTELIGENTE FORTEZZA ZIGBEE",
       "imagen": "https://m.media-amazon.com/images/I/51RXeqMLceL._AC_SL1500_.jpg",
       "precio": "$ 99.00"
-  }
+  },
+
+  {
+    "id": 4,
+    "nombre": "Cerradura Blent",
+    "imagen": "https://m.media-amazon.com/images/I/51RXeqMLceL._AC_SL1500_.jpg",
+    "precio": "$ 199.00"
+}
 ]
 
 function App() {
   return (
-    <div>
+    <div className="lista-productos">
       <h1>Productos</h1>
-      {productos.map((producto) =>{
-        return <Card/>
-
-      })}
       
-    </div>
+      {productos.map((producto) =>{
+        return <Card pro={producto} key={producto.id} />
+            
+      })}
+      </div>
+    
   );
 }
 

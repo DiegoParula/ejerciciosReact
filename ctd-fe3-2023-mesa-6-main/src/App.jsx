@@ -1,5 +1,6 @@
-import './App.css'
+import './sheetsstyle/App.css'
 import React from 'react'
+import Card from './Components/Card';
 
 /* Array de ciudades que debemos utilizar en la actividad */
 const cities = [
@@ -76,11 +77,15 @@ const cities = [
 ];
 
 function App() {
-
+  const citiesFilter = cities.filter(city => city.country === 'AR')
   return (
+    
     <div className="App">
       <React.Fragment>
-        {/* Aquí debemos empezar a codear */}
+        
+        {citiesFilter.map((c)=>{
+          return <Card city={c} key={c.id}/>
+        })}
       </React.Fragment>
     </div>
   )

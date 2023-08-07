@@ -17,5 +17,11 @@
     font-size: 20px;
     display: flex;
     align-items: center;
-    overflow-wrap: anywhere;/*si el testo es muy largo, el mismo va a ser cortado y va a seguir hacia abajo*/
+    overflow-wrap: anywhere;/*si el texto es muy largo, el mismo va a ser cortado y va a seguir hacia abajo*/
+}
+
+.tarea-icono{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
 }

@@ -1,4 +1,7 @@
 import React from "react";
+import '../sheetsstyle/Tarea.css'
+import { AiOutlineCloseCircle } from "react-icons/ai"
+
 
 function Tarea ({texto}){
     return (
@@ -6,8 +9,8 @@ function Tarea ({texto}){
             <div className="tarea-texto">
                 {texto}
             </div>
-            <div className="tarea-icono">
-                Eliminar
+            <div className="tarea-contenedor-iconos">
+                <AiOutlineCloseCircle className="tarea-icono" />
             </div>
         </div>
     )

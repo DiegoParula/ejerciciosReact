@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
 import Card from './Card';
 
-const Lista = ({opcion}) => {
-   
+const Lista = ({opcion, cant}) => {
+ 
+  
   return (
     <div>
-        {opcion.map((prod)=>{
-       return (<h2 key={index}>{prod.tipo}</h2> ) 
-      })}
-           
-       
+       <h2>{opcion} x {cant}</h2>
     </div>
   )
 }

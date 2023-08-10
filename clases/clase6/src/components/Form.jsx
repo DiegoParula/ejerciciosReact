@@ -3,7 +3,7 @@ import { useState } from 'react'
 import '../styles/Card.css'
 
 function Form() {
-    const [nombre, setNombre] = useState()
+  const [nombre, setNombre] = useState()
   const [edad, setEdad] = useState()
   const [mensaje, setMensaje] = useState()
 
@@ -15,13 +15,21 @@ function Form() {
   
     /*Validaciones*/
 
+  const [show, setShow]  = useState()
+  const [error, setError] = useState() 
+
+  /*hacerlo con show y error
+  {errro && <>ingresa bien los datos animal</>}
+  {show ? <>bien ahi</>}
+  */ 
+
   const validarNombre = (nombre) =>{
     const nombreSinEspacios = nombre.trim()
     if(nombreSinEspacios.length > 2){
       return true
     }else{
       return false
-    }
+    }/*aca va show y error dependiendo */
 
   }  
 
@@ -72,6 +80,8 @@ function Form() {
           onChange={onChangeEdad}  
         />
         <p className='par'>{mensaje}</p>
+
+         
 
         <button type='submit' className='button'>Enviar</button>
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import '../styles/Card.css'
 
 function Card() {
 
@@ -10,46 +11,111 @@ function Card() {
     })
 
     const[show, setShow] = useState(false)
-    const[error, setError] = useState(false) 
+    const[error, setError] = useState()
+    
+    const[mensaje, setMensaje] = useState()
+    
 
-    const onChangeNombre = (e) => setUsuario({...usuario, nombre: e.target.value})
-    const onChangeEdad = (e) => setUsuario({...usuario, edad: e.target.value})
+    const onChangeNombre = (e) => {
+        setError("")
+        const nombreCapt = e.target.value
+        if(/^[a-zA-Z]+$/.test(nombreCapt)){
+            setUsuario({...usuario, nombre: e.target.value})
+             
+         }else {
+             setError("Debe ingresar un nombre valido")
+         }    
+
+    }//setUsuario({...usuario, nombre: e.target.value})
+    
+    const onChangeEdad = (e) => {
+        setError("")
+        const nombreCapt = e.target.value
+        if(/^\d*$/.test(nombreCapt) || nombreCapt > 0){
+            setUsuario({...usuario, edad: e.target.value})
+       
+         }else {
+             setError("Debe ingresar solo números")
+         }    
+        }
+    
     const onChangePoke = (e) => setUsuario({...usuario, pokemon: e.target.value})
-    console.log(usuario)
+    //console.log(usuario)
     //const cambioUsuario = (e) =>setUsuario({...usuario, value: e.target.value})
     
+/*    const validaNombre = (str) =>{
+        if(/^[a-zA-Z]+$/.test(str)){
+           return true
+            
+        }else {
+            return false
+        }
+    }*/
     
     const onCarga = (e) => {
         e.preventDefault()
+
+        if(usuario.nombre == "" || usuario.edad == "" || usuario.pokemon == "")
+        {
+            setError("Por favor ingrese bien la informacion")
+        }else{
+            setError("")
+            setShow(true)
+        }
+       /* const nombreValido = validaNombre(usuario.nombre)
+        console.log(nombreValido)
+
+
+        if(nombreValido){
+            setShow(true)
+            setError(false)
+        }
+        else {
+            setShow(false)
+            setError(true)
+        }
+*/
         
 
     }
 
 
   return (
-    <div>
-        <form onSubmit={onCarga}>
-            <h2>Ingresar datos</h2>
-            <label >Ingresar nombre</label>
+    <div className='form'>
+        <form className= 'form-contenedor'onSubmit={onCarga}>
+            <h2 className='signup'>Ingresar datos</h2>
+            
             <input 
                 type="text"
-                onBlur={onChangeNombre } 
+                onBlur={onChangeNombre }
+                className='form--input'
+                placeholder='Nombre' 
 
             />
-            <label>Ingresar edad</label>
             <input 
                 type="" 
                 onBlur={onChangeEdad}
-
+                className='form--input'
+                placeholder='Edad'
             />
             
-            <label >Ingresar Pokemon Favorito</label>
             <input 
                 type="text"
                 onBlur={onChangePoke}
+                placeholder='Pokemon'
+                className='form--input'
 
             />
-            <button>Ingresar</button>
+            <button className='form--submit'>Ingresar</button>
+
+            <p>{error}</p>
+            {show ? <p>Hola {usuario.nombre}</p> : null}    
+
+            <div className='respuesta'>
+            <p>{error}</p>
+            {show ? <p>Hola {usuario.nombre}</p> : null}
+            </div>
+
         </form>
     </div>
   )

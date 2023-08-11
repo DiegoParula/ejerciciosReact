@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import '../styles/Card.css'
 
+
 function Form() {
   const [nombre, setNombre] = useState()
   const [edad, setEdad] = useState()

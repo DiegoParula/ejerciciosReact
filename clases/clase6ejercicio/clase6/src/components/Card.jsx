@@ -12,16 +12,15 @@ function Card() {
     const[show, setShow] = useState(false)
     const[error, setError] = useState(false) 
 
-    const onChangeNombre = (e) => setUsuario(...usuario, {nombre: e.target.value})
-    console.log(usuario.nombre)
-    const onChangeEdad = (e) => setUsuario.edad(...usuario, e.target.value)
-    const onChangePoke = (e) => setUsuario.pokemon(...usuario, e.target.value)
-
+    const onChangeNombre = (e) => setUsuario({...usuario, nombre: e.target.value})
+    const onChangeEdad = (e) => setUsuario({...usuario, edad: e.target.value})
+    const onChangePoke = (e) => setUsuario({...usuario, pokemon: e.target.value})
+    console.log(usuario)
+    //const cambioUsuario = (e) =>setUsuario({...usuario, value: e.target.value})
     
     
-    
-    const onCarga = (onCarga) => {
-        error.preventDefault()
+    const onCarga = (e) => {
+        e.preventDefault()
         
 
     }
@@ -34,20 +33,20 @@ function Card() {
             <label >Ingresar nombre</label>
             <input 
                 type="text"
-                onChange={onChangeNombre} 
+                onBlur={onChangeNombre } 
 
             />
             <label>Ingresar edad</label>
             <input 
                 type="" 
-                onChange={onChangeEdad}
+                onBlur={onChangeEdad}
 
             />
             
             <label >Ingresar Pokemon Favorito</label>
             <input 
                 type="text"
-                onChange={onChangePoke}
+                onBlur={onChangePoke}
 
             />
             <button>Ingresar</button>

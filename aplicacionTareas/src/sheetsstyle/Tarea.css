@@ -11,6 +11,21 @@
     cursor: pointer;
 }
 
+/*cada 3 elementos se repite esa secuencia de colores
+es como decir el enesimo hijo que cumple con esa 
+formula repite el patron 3 veces*/ 
+.tarea-contenedor:nth-child(3n+1){
+  background-color: #1b1b32;  
+}
+
+.tarea-contenedor:nth-child(3n+2){
+    background-color: #2a2a40;  
+  }
+
+  .tarea-contenedor:nth-child(3n+3){
+    background-color: #3b3b4f;  
+  }
+
 .tarea-texto{
     width: 100%;
     height: 100%;

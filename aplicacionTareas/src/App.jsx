@@ -1,7 +1,7 @@
 
 import Logo from './components/logo'
 import './App.css'
-import Tarea from './components/Tarea'
+import ListaDeTareas from './components/ListaDetareas'
 
 function App() {
 
@@ -14,7 +14,9 @@ function App() {
 
   <div className='tareas-lista-principal'>
     <h1>Mis Tareas</h1>
-    <Tarea texto="Aprender React"/>
+
+    <ListaDeTareas />
+    
   </div>
 
    </div>

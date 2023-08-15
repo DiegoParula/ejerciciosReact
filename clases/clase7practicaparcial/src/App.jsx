@@ -6,12 +6,16 @@ import Card from './componentes/Card'
 import Form from './componentes/Form'
 
 function App() {
-  
+ 
+  const [usuarioData, setUsuarioData] = useState({})  
+  const [mensajeErrorData, setMensajeErrorData] = useState()
+
+
 
   return (
     <>
-      <Form />
-      <Card />
+      <Form setUsuario={setUsuarioData} setMensajeError={setMensajeErrorData}/>
+      <Card usuario={usuarioData} mensaje={mensajeErrorData}/>
 
     </>
   )

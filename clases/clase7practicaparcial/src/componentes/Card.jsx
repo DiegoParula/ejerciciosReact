@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Card(usuario, mensajeError) {
+function Card({usuario, mensajeError}) {
   return (
     <div>
     <div>
-        <p>{usuario}</p>
+        <p>{usuario.nombre}</p>
         </div>
     <div>
         <p>{mensajeError}</p>

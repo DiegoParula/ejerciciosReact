@@ -8,16 +8,18 @@ import Form from './componentes/Form'
 function App() {
  
   const [usuarioData, setUsuarioData] = useState({})  
-  const [mensajeErrorData, setMensajeErrorData] = useState()
+  //const [mensajeErrorData, setMensajeErrorData] = useState()
 
-
-
+  const manejarDatos = (usuario) =>{
+    setUsuarioData(usuario)
+  }
+  
   return (
-    <>
-      <Form setUsuario={setUsuarioData} setMensajeError={setMensajeErrorData}/>
-      <Card usuario={usuarioData} mensaje={mensajeErrorData}/>
+    <div className='App'>
+      <Form enviarDatos={manejarDatos}/>
+      <Card usuario={usuarioData} />
 
-    </>
+    </div>
   )
 }
 

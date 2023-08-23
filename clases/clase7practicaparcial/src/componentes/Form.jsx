@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
-import Card from './Card'
 
 
-function Form({setUsuario, setMensajeError}) {
 
-    // const [usuario, setUsuario] = useState({
-    //     nombre: '',
-    //     apellido: '',
-    //     telefono: ''
+function Form({enviarDatos}) {
 
-    // })
-    const mensajeError = '';
+      const [usuario, setUsuario] = useState({
+          nombre: '',
+          apellido: '',
+          telefono: ''
+
+     })
+    //const mensajeError = '';
     //const [mensajeError, setMensajeError] = useState()
 
     const [telefonoIngresado, setTelefono] = useState()
@@ -29,13 +29,15 @@ function Form({setUsuario, setMensajeError}) {
               nombre: nombreIngresado,
               apellido: apellidoIngresado,
               telefono: telefonoIngresado,
-            });
-            const mensajeError= SetMensajeError;
-          } else {
-            setMensajeError('Por favor, ingrese la información correctamente.');
-          }
+            })
+            enviarDatos(usuario) 
+            ;}
+            //const mensajeError= SetMensajeError;
+          // } else {
+          //   setMensajeError('Por favor, ingrese la información correctamente.');
+          // }
 
-           
+          enviarDatos(usuario)           
             
             // if(usuario.keys.length===0){
             // return mensajeError}
@@ -74,7 +76,7 @@ function Form({setUsuario, setMensajeError}) {
             
         </form>    
         <div>
-        <Card mensajeError={mensajeError} />
+   
     </div>
 
     </div>

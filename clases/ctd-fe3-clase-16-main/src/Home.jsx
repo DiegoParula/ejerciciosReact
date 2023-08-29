@@ -8,16 +8,17 @@ const Home = () => {
     const res = await fetch("https://api.punkapi.com/v2/beers")
     const data = await res.json()
     setBeers(data)
+    console.log(data)
   }
 
   useEffect(()=>{
     getBeers()
-  })
+  },[])
 
   return (
     <div className='grid'>
         {beers.length 
-           ? beers.map(beer => (<Card data={beer} />))
+           ? beers.map(beer => (<Card key={beer.id} data={beer} /> ))
            : null
         }
     </div>

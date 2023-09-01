@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import ThemeContext, {themes} from './context'
 import './App.css'
 import NavBar from './components/NavBar'

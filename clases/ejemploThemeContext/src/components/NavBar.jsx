@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useContext}  from 'react'
 import '../index.css'
 import ThemeContext from '../context'
 
 const NavBar = () => {
+  const {theme, handleChangeTheme} = useContext(ThemeContext)
+
   return (
     <div className="navbar">
     <p>Inicio</p>
-    <button>THEMED BUTTON</button>
+    <button
+    onClick={handleChangeTheme}
+    style={{background: theme.background, color:theme.font}}>
+      Change Theme
+    </button>
     </div>
   )
 }

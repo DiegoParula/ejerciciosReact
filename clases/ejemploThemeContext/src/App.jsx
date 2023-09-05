@@ -24,7 +24,7 @@ function App() {
     }
 
     const providerValue = useMemo(()=>({theme,
-      handleChangeTheme}),[theme,handleChangeTheme])
+      handleChangeTheme}),[theme,handleChangeTheme])//
   return (
     <>
       <ThemeContext.Provider value={providerValue}>

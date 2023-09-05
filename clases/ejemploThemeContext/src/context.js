@@ -9,7 +9,7 @@ font: 'white',
 background: 'black'
 }
 };
-const ThemeContext = createContext(themes.light);
+const ThemeContext = createContext(themes.light);//me sirve de intermediario para que todos puedan acceder 
 export default ThemeContext;
 
 // Este cuenta con el objeto con nuestros colores y el createContext 

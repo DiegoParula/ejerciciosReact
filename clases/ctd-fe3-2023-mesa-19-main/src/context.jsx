@@ -3,7 +3,7 @@ import EN from "./languages/english.json"
 import PTBR from "./languages/portuguese.json"
 import ES from "./languages/spanish.json"
 
-export const languages = {
+const languages = {
     english: {
         id: "EN",
         text: EN
@@ -20,16 +20,25 @@ export const languages = {
 };
 
 /* SUGERENCIA: Usa createContext e inicia el idioma inglês como predeterminado */
-const RecipeLanguage = createContext()
-const idionaInicial = languages.english
+export const RecipeLanguage = createContext()
+const idionaInicial = languages.spanish
 
 
 const LanguageContext = ({children}) =>{
     const[language, setLanguage] = useState(idionaInicial)
+    
+    
     const handleChangeLA = () => {
-        setLanguage(() => {
-          
-        })
+        if (language.id === "ES"){
+        setLanguage(languages.english)
+        }
+        else if(language.id === "EN"){
+            setLanguage(languages.portugues)
+        }
+        else if(language.id === "PTBR"){
+            setLanguage(languages.spanish)
+        }
+        
       }
     return(
         <RecipeLanguage.Provider value={{language, handleChangeLA}}>
